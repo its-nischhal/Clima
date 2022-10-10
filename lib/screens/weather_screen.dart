@@ -86,8 +86,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
       sunset = '${sunsetTime.hour%12}:${sunsetTime.minute} PM';
     }
 
-
-
     setState(() {
 
     });
@@ -241,7 +239,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         child: Center(
                             child: Text(
                           'Humidity $humidity%',
-                          style: const TextStyle(fontSize: 25.0),
+                          style: const TextStyle(fontSize: 20.0),
                         )),
                       ),
                     )),
@@ -252,8 +250,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       child: Container(
                         decoration: kBoxDecoration,
                         child: Center(
-                            child: Text('Wind-${windSpeed.toStringAsFixed(1)} km/h',
-                                style: const TextStyle(fontSize: 25.0))),
+                            child: Text('Wind ${windSpeed.toStringAsFixed(1)} km/h',
+                                style: const TextStyle(fontSize: 20.0))),
                       ),
                     )),
                   ],
