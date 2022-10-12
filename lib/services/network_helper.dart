@@ -7,8 +7,12 @@ class DataFetcher{
   DataFetcher({required this.url});
   Future fetchWeatherData() async {
     uri = Uri.parse(url);
-    Response weatherData =await get(uri);
-    return jsonDecode(weatherData.body);
+    try{
+      Response weatherData =await get(uri);
+      return jsonDecode(weatherData.body);
+    }
+    catch(e){
+    }
   }
 
 

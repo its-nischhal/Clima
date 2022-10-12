@@ -1,13 +1,18 @@
 import 'package:geolocator/geolocator.dart';
 class Locator{
 
-  Position? position;
+  late Position position;
 
   Future<Position> fetchLocation() async{
+    // bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    // if (!serviceEnabled) {
+    //   return Future.error('Location services are disabled.');
+    // }
     LocationPermission  permission= await Geolocator.checkPermission();
     if(permission==LocationPermission.denied){
-      await Geolocator.requestPermission();
+      Geolocator.requestPermission();
     }
-    return await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
+    position =  await Geolocator.getCurrentPosition();
+    return position;
   }
 }

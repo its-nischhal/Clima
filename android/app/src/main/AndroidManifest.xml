@@ -1,9 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.clima.www.clime">
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
-   <application
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <application
         android:label="clime"
-        android:name="${applicationName}"
+        android:name="Clima"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
